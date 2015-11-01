@@ -1,0 +1,37 @@
+[0m[[0minfo[0m] [0mPackaging /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/mindmeister2trello-importer_2.11-0.1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/TrelloImporter$$anonfun$postCardForTaskList$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/TrelloImporter$$anonfun$postCardForTaskList$1.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/App$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/App$.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/TrelloImporter$$anonfun$addTaskCards$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/TrelloImporter$$anonfun$addTaskCards$1.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/Exit.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/Exit.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/Exit$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/Exit$.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/TrelloImporter$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/TrelloImporter$.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer$.class[0m
+[0m[[0mdebug[0m] [0m	com/github[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer$$anonfun$analyzeMindmap$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer$$anonfun$analyzeMindmap$1.class[0m
+[0m[[0mdebug[0m] [0m	com[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer$$anonfun$parse$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer$$anonfun$parse$1.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/App.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/App.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/TrelloImporter.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/TrelloImporter.class[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/TrelloImporter$$anonfun$postCardForTaskList$2.class[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/classes/com/github/kazuhito_m/m2ti/TrelloImporter$$anonfun$postCardForTaskList$2.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

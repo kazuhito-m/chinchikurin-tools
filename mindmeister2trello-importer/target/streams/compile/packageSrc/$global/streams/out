@@ -1,0 +1,9 @@
+[0m[[0minfo[0m] [0mPackaging /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/scala-2.11/mindmeister2trello-importer_2.11-0.1.0-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/TrelloImporter.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/src/main/scala/com/github/kazuhito_m/m2ti/TrelloImporter.scala[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/App.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/src/main/scala/com/github/kazuhito_m/m2ti/App.scala[0m
+[0m[[0mdebug[0m] [0m	com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer.scala[0m
+[0m[[0mdebug[0m] [0m	  /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/src/main/scala/com/github/kazuhito_m/m2ti/MindmeisterJsonAnalyzer.scala[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

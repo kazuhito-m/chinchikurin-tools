@@ -1,0 +1,10 @@
+[0m[[0mdebug[0m] [0m	starting transaction: publish during transaction will be done in [0m
+[0m[[0mdebug[0m] [0m		/home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/repo/com/github/kazuhto-m/mindmeister2trello-importer_2.11/0.1.0.part[0m
+[0m[[0mdebug[0m] [0m	and on commit moved to [0m
+[0m[[0mdebug[0m] [0m		/home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/repo/com/github/kazuhto-m/mindmeister2trello-importer_2.11/0.1.0[0m
+[0m[[0minfo[0m] [0m	published mindmeister2trello-importer_2.11 to /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/repo/com/github/kazuhto-m/mindmeister2trello-importer_2.11/0.1.0.part/mindmeister2trello-importer_2.11-0.1.0.pom[0m
+[0m[[0minfo[0m] [0m	published mindmeister2trello-importer_2.11 to /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/repo/com/github/kazuhto-m/mindmeister2trello-importer_2.11/0.1.0.part/mindmeister2trello-importer_2.11-0.1.0.jar[0m
+[0m[[0minfo[0m] [0m	published mindmeister2trello-importer_2.11 to /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/repo/com/github/kazuhto-m/mindmeister2trello-importer_2.11/0.1.0.part/mindmeister2trello-importer_2.11-0.1.0-sources.jar[0m
+[0m[[0minfo[0m] [0m	published mindmeister2trello-importer_2.11 to /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/repo/com/github/kazuhto-m/mindmeister2trello-importer_2.11/0.1.0.part/mindmeister2trello-importer_2.11-0.1.0-javadoc.jar[0m
+[0m[[0minfo[0m] [0m	publish commited: moved /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/repo/com/github/kazuhto-m/mindmeister2trello-importer_2.11/0.1.0.part [0m
+[0m[[0minfo[0m] [0m		to /home/kazuhito_m/Programing/git/chinchikurin-tools/mindmeister2trello-importer/target/repo/com/github/kazuhto-m/mindmeister2trello-importer_2.11/0.1.0[0m
