@@ -2,6 +2,7 @@
 DROP   PROCEDURE IF EXISTS execute_sql_oneline;
 CREATE PROCEDURE execute_sql_oneline(IN sql_statement VARCHAR(16384))
 BEGIN
+  SELECT sql_statement AS SQL_State FROM dual;
 	SET @update_sql = sql_statement;
 	PREPARE stmt from @update_sql;
 	EXECUTE stmt;
