@@ -2,7 +2,6 @@
 DROP   PROCEDURE IF EXISTS execute_sql_oneline;
 CREATE PROCEDURE execute_sql_oneline(IN sql_statement VARCHAR(16384))
 BEGIN
-  SELECT sql_statement AS SQL_State FROM dual;
 	SET @update_sql = sql_statement;
 	PREPARE stmt from @update_sql;
 	EXECUTE stmt;
@@ -37,8 +36,8 @@ BEGIN
 END;
 
 -- とりあえず「種となるID群のテーブル」を作成
-DROP   PROCEDURE IF EXISTS create_seed_table_simple;
-CREATE PROCEDURE create_seed_table_simple(IN row INT)
+DROP   PROCEDURE IF EXISTS create_seed_table;
+CREATE PROCEDURE create_seed_table(IN row INT)
 BEGIN
 	DECLARE cnt INT;
 	DROP TABLE IF EXISTS id_seeds;
@@ -52,6 +51,24 @@ BEGIN
 		INSERT INTO id_seeds VALUES ();
 		SET cnt = cnt + 1;
 	END WHILE;
+END;
+
+-- 指定したテーブルの件数を取得する。
+DROP   PROCEDURE IF EXISTS get_table_rec_count;
+CREATE PROCEDURE get_table_rec_count(
+	IN t_name VARCHAR(128)
+	, OUT t_cnt INT
+)
+BEGIN
+	DECLARE sql_statement VARCHAR(256);
+	SET sql_statement = CONCAT('select count(*) INTO @cnt from `' , t_name , '`');
+
+	SET @count_sql = sql_statement;
+	PREPARE stmt from @count_sql;
+	EXECUTE stmt;
+	DEALLOCATE PREPARE stmt;
+
+	SET t_cnt = @cnt;
 END;
 
 -- 列一個分の「SELECT句に埋める設定」を文字列で返す。
@@ -76,15 +93,17 @@ BEGIN
 	IF c_key IS NOT NULL THEN
 		CASE d_type
 			WHEN 'varchar' THEN
-				SET select_field_str = CONCAT('RIGHT(CONCAT(REPEAT("0",' , char_max_length , '),' , seed_table_field , '),' , char_max_length , ')');
+				-- かぶらず、効率よく文字列を使うため、前ゼロ生め36進数でデータを作る。
+				SET select_field_str = CONCAT('RIGHT(CONCAT(REPEAT("0",' , char_max_length , '),CONV(' , seed_table_field , ',10,36)),' , char_max_length , ')');
 			WHEN 'decimal' THEN	-- NUMERICは実際には内部でDECIMALで宣言したことになるみたい
-				SET select_field_str = seed_table_field;
+				-- 左から書き込み可能桁だけ分、書き出す。
+				SET select_field_str = CONCAT('MOD(' , seed_table_field , ',POW(10,' , (num_pos - num_scale) , '))');
 			WHEN 'datetime' THEN
 				-- 日付がPKだった場合？ とりあえず「かぶらない過去日」を作っておく
 				SET select_field_str = CONCAT('ADDDATE(CURDATE() , -' , seed_table_field , ')');
 			WHEN 'clob' THEN
 				-- 文字列と一緒。
-				SET select_field_str = CONCAT('CAST(' , seed_table_field , ' AS CHAR)');
+				SET select_field_str = CONCAT('RIGHT(CONCAT(REPEAT("0",' , char_max_length , '),CONV(' , seed_table_field , ',10,36)),' , char_max_length , ')');
 			ELSE
 				SET select_field_str = '0';
 		END CASE;
@@ -170,12 +189,12 @@ BEGIN
 	call execute_sql_oneline(insert_sql);
 END;
 
-
 -- テーブルをまわす。
 DROP   PROCEDURE IF EXISTS make_test_data;
-CREATE PROCEDURE make_test_data(IN s_name VARCHAR(64))
+CREATE PROCEDURE make_test_data(IN s_name VARCHAR(64), IN resume_mode INT)
 BEGIN
 	DECLARE t_name VARCHAR(64);
+	DECLARE t_count INT;
 	DECLARE eod tinyint;
 	DECLARE t_cur CURSOR FOR
 		SELECT table_name
@@ -190,10 +209,20 @@ BEGIN
 	OPEN t_cur;
 	FETCH t_cur INTO t_name;
 	WHILE eod = 0 DO
-		-- デバッグ表示
-		SELECT t_name AS 対象テーブル名 , count(*) AS 増加件数 FROM id_seeds;
-		-- テーブル名を投げ込み、子関数でSQLを作らせる
-		call make_test_data_by_table_name(t_name, s_name);
+
+		-- 対象テーブルのカウント取得
+		SET t_count = 0;
+		call get_table_rec_count(t_name,t_count);
+		-- レジュームフラグが寝てるか、カウントが0なら、INSERTを実行
+		IF resume_mode <> 0 AND t_count > 0 THEN
+			-- デバッグ表示
+			SELECT t_name AS 対象テーブル名 , t_count AS 現在件数 , 'スキップ' AS データ作成 FROM dual;
+		ELSE
+			-- デバッグ表示
+			SELECT t_name AS 対象テーブル名 , t_count AS 現在件数 , '実行' AS データ作成 FROM dual;
+			-- テーブル名を投げ込み、子関数でSQLを作らせる
+			call make_test_data_by_table_name(t_name, s_name);
+		END IF;
 
 	  FETCH t_cur INTO t_name;
 	END WHILE;
