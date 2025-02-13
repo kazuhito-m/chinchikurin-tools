@@ -19,7 +19,9 @@ const main = () => {
         const dom = new JSDOM(html);
         const document = dom.window.document;
 
-        analizeTwilogHtml(document);
+        const posts = analizeTwilogHtml(document);
+
+        posts.forEach(post => console.log(post.makeCsvOneLine()));
     } catch (error) {
         console.error('HTMLの解析に失敗しました。:', error);
     }

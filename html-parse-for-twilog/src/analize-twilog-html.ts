@@ -1,21 +1,18 @@
 import { XPost } from "./x-post";
 
-export const analizeTwilogHtml = (document: Document): void => {
-    const links = document.querySelectorAll('.tl-tweet');
-    links.forEach((item: Element) => {
-        const post = new XPost(
-            nvl(item.attributes.getNamedItem('data-date')?.nodeValue),
-            nvl(item.querySelector(".tl-posted .tb-tw")?.textContent),
-            nvl(item.attributes.getNamedItem('data-status-id')?.nodeValue),
-            nvl(item.querySelector(".tl-name span")?.textContent),
-            nvl(item.querySelector(".tl-text")?.textContent)
-        );
+export const analizeTwilogHtml = (document: Document): XPost[] => {
+    return Array.from(document.querySelectorAll('.tl-tweet').values())
+        .map((tlTweet: Element) => tlTweetElementToPost(tlTweet));
+}
 
-        const oneLine = [post.timestamp(), post.url(), post.fixedContent()]
-            .map(i => `"${i}"`)
-            .join(',');
-        console.log(oneLine);
-    });
+const tlTweetElementToPost = (tlTweet: Element): XPost => {
+    return new XPost(
+        nvl(tlTweet.attributes.getNamedItem('data-date')?.nodeValue),
+        nvl(tlTweet.querySelector(".tl-posted .tb-tw")?.textContent),
+        nvl(tlTweet.attributes.getNamedItem('data-status-id')?.nodeValue),
+        nvl(tlTweet.querySelector(".tl-name span")?.textContent),
+        nvl(tlTweet.querySelector(".tl-text")?.textContent)
+    );
 }
 
 const nvl = (value: string | null | undefined): string => {

@@ -18,4 +18,10 @@ export class XPost {
     public fixedContent(): string {
         return this.content.replace(/"/g, "");
     }
+
+    public makeCsvOneLine(): string  {
+        return [this.timestamp(), this.url(), this.fixedContent()]
+            .map(i => `"${i}"`)
+            .join(',');
+    } 
 }
