@@ -21,7 +21,8 @@ const main = () => {
 
         const posts = analizeTwilogHtml(document);
 
-        posts.forEach(post => console.log(post.makeCsvOneLine()));
+        posts.map(post => post.makeCsvOneLine())
+            .forEach(line => console.log(line));
     } catch (error) {
         console.error('HTMLの解析に失敗しました。:', error);
     }
